@@ -6,7 +6,7 @@
  */
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
         if(mat->r != mat->c || mat->r != b->r || mat->c != x->r || b->c != 1 || x->c != 1) {
-                return -1;
+                return 2;
         }
 
         int n = mat->r;
@@ -19,7 +19,7 @@ int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
                 }
 
                 if ( mat->data[i][i] == 0 ) {
-                        return 2;
+                        return 1;
         }
 
                 x->data[i][0] = (b->data[i][0] - sum) / mat->data[i][i];
