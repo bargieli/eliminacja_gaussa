@@ -33,15 +33,22 @@ Matrix * readFromFile(char * fname) {
 
 void printToScreen(Matrix *mat) {
 	int i,j;
+    FILE * plik = fopen("odpowiedzi.txt", "w");
 	printf("[ \n");
+    fprintf(plik, "[ \n");
 	for (i = 0; i<mat->r; i++) {
 		printf("  ");
+        fprintf(plik, "  ");
 		for (j = 0; j < mat->c; j++) {
 			printf("%f ", mat->data[i][j]);
+            fprintf(plik, "%f ", mat->data[i][j]);
 		}
 		printf("; \n");
+        fprintf(plik, "; \n");
 	}
+    fprintf(plik, "]\n");
 	printf("]\n");
+    fclose(plik);
 }
 
 Matrix * createMatrix(int r, int c) {
