@@ -7,6 +7,10 @@
  * Zwraca 0 - elimnacja zakonczona sukcesem
  * Zwraca 1 - macierz osobliwa - dzielenie przez 0
  */
+double bezw(double a);
+
+double zaokragl_do_zera(double a);
+
 int eliminate(Matrix *mat, Matrix *b);
 
 #endif
