@@ -48,7 +48,24 @@ void printToScreen(Matrix *mat) {
 	}
     fprintf(plik, "]\n");
 	printf("]\n");
+<<<<<<< HEAD
     fclose(plik);
+=======
+
+	const char *nazwa = "wynik.txt";	
+	FILE *plik = fopen(nazwa, "w");
+
+        if( plik == NULL ) {
+                fprintf(stderr, "Błąd podczas otwierania pliku\n");
+                return;
+        }
+
+        for( int i = 0; i < mat->r; i++ ) {
+                fprintf( plik, "x%d = %f\n", i+1, mat->data[i][0]);
+        }
+
+        fclose(plik);
+>>>>>>> 6ac3587ef8a4aad22bee732e9dabaaa5535283d6
 }
 
 Matrix * createMatrix(int r, int c) {

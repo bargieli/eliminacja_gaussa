@@ -26,9 +26,10 @@ int main(int argc, char ** argv) {
 	} else {
 					fprintf(stderr,"Błąd! Nie mogłem utworzyć wektora wynikowego x.\n");
 	}
-
+	
 	freeMatrix(A);
 	freeMatrix(b);
-
+	
 	return 0;
+
 }
